@@ -1,0 +1,294 @@
+{
+  "n_filas": 27166,
+  "n_cols": 31,
+  "n_barrios": 48,
+  "n_filas_crudo": 29685,
+  "n_cols_crudo": 90,
+  "room_type_pct": {
+    "Entire home/apt": 90.6,
+    "Private room": 8.6,
+    "Hotel room": 0.5,
+    "Shared room": 0.3
+  },
+  "precio_medio": 123358,
+  "precio_mediana": 100964,
+  "ocupacion_media_pct": 21.1,
+  "n_amenities_media": 32.9,
+  "pct_missing_reviews": 11.5,
+  "n_barrios_con_poi": 36,
+  "corr_poi_precio": 0.3,
+  "scatter_poi_precio": [
+    {
+      "barrio": "Agronomia",
+      "x": 83.0,
+      "y": 95296.2946875
+    },
+    {
+      "barrio": "Almagro",
+      "x": 244.0,
+      "y": 94636.52756319515
+    },
+    {
+      "barrio": "Barracas",
+      "x": 232.0,
+      "y": 111233.82917948719
+    },
+    {
+      "barrio": "Belgrano",
+      "x": 580.0,
+      "y": 127219.04192307692
+    },
+    {
+      "barrio": "Boca",
+      "x": 152.0,
+      "y": 111609.22807017544
+    },
+    {
+      "barrio": "Boedo",
+      "x": 168.0,
+      "y": 77505.69677419355
+    },
+    {
+      "barrio": "Caballito",
+      "x": 229.0,
+      "y": 98286.75254761905
+    },
+    {
+      "barrio": "Chacarita",
+      "x": 282.0,
+      "y": 101357.4290131579
+    },
+    {
+      "barrio": "Coghlan",
+      "x": 144.0,
+      "y": 87714.48715909092
+    },
+    {
+      "barrio": "Constitucion",
+      "x": 377.0,
+      "y": 93143.42558333333
+    },
+    {
+      "barrio": "Flores",
+      "x": 185.0,
+      "y": 89771.8272
+    },
+    {
+      "barrio": "Floresta",
+      "x": 151.0,
+      "y": 135202.16708333333
+    },
+    {
+      "barrio": "Liniers",
+      "x": 178.0,
+      "y": 98458.00523809524
+    },
+    {
+      "barrio": "Mataderos",
+      "x": 87.0,
+      "y": 109883.33071428571
+    },
+    {
+      "barrio": "Monserrat",
+      "x": 550.0,
+      "y": 100285.08449329359
+    },
+    {
+      "barrio": "Monte Castro",
+      "x": 89.0,
+      "y": 92265.72266666667
+    },
+    {
+      "barrio": "Nuñez",
+      "x": 184.0,
+      "y": 133578.88638888887
+    },
+    {
+      "barrio": "Palermo",
+      "x": 484.0,
+      "y": 135289.86217410714
+    },
+    {
+      "barrio": "Parque Chacabuco",
+      "x": 120.0,
+      "y": 97506.41222222222
+    },
+    {
+      "barrio": "Parque Chas",
+      "x": 142.0,
+      "y": 96303.16127659574
+    },
+    {
+      "barrio": "Paternal",
+      "x": 94.0,
+      "y": 76039.95999999999
+    },
+    {
+      "barrio": "Puerto Madero",
+      "x": 203.0,
+      "y": 221324.06597333332
+    },
+    {
+      "barrio": "Retiro",
+      "x": 523.0,
+      "y": 127239.68624082232
+    },
+    {
+      "barrio": "Saavedra",
+      "x": 154.0,
+      "y": 106174.70230263157
+    },
+    {
+      "barrio": "San Cristobal",
+      "x": 178.0,
+      "y": 86871.08804195804
+    },
+    {
+      "barrio": "San Nicolas",
+      "x": 668.0,
+      "y": 115760.25142725598
+    },
+    {
+      "barrio": "Velez Sarsfield",
+      "x": 141.0,
+      "y": 101935.96846153846
+    },
+    {
+      "barrio": "Villa Crespo",
+      "x": 296.0,
+      "y": 107021.3454467169
+    },
+    {
+      "barrio": "Villa Del Parque",
+      "x": 105.0,
+      "y": 117771.87948979592
+    },
+    {
+      "barrio": "Villa Gral. Mitre",
+      "x": 111.0,
+      "y": 84075.35148148148
+    },
+    {
+      "barrio": "Villa Luro",
+      "x": 112.0,
+      "y": 92851.04321428572
+    },
+    {
+      "barrio": "Villa Ortuzar",
+      "x": 165.0,
+      "y": 83705.82769230769
+    },
+    {
+      "barrio": "Villa Pueyrredon",
+      "x": 83.0,
+      "y": 80100.15129032258
+    },
+    {
+      "barrio": "Villa Real",
+      "x": 119.0,
+      "y": 62099.81999999999
+    },
+    {
+      "barrio": "Villa Santa Rita",
+      "x": 115.0,
+      "y": 86402.188
+    },
+    {
+      "barrio": "Villa Soldati",
+      "x": 19.0,
+      "y": 101990.0
+    }
+  ],
+  "corr_reviews_precio": 0.05,
+  "corr_ubicacion_precio": 0.05,
+  "reviews_bins": {
+    "< 4.5": 113289.0,
+    "4.5 - 4.8": 116970.0,
+    "4.8 - 4.95": 124457.0,
+    "4.95 - 5.0": 126696.0
+  },
+  "amenities_premium": [
+    {
+      "amenity": "Gimnasio",
+      "premium_pct": 29.2,
+      "penetracion_pct": 12.8
+    },
+    {
+      "amenity": "Pileta",
+      "premium_pct": 23.1,
+      "penetracion_pct": 27.2
+    },
+    {
+      "amenity": "Cochera",
+      "premium_pct": 17.5,
+      "penetracion_pct": 56.3
+    },
+    {
+      "amenity": "Acepta mascotas",
+      "premium_pct": 14.6,
+      "penetracion_pct": 19.0
+    },
+    {
+      "amenity": "Aire acondicionado",
+      "premium_pct": 8.0,
+      "penetracion_pct": 69.5
+    },
+    {
+      "amenity": "Wifi",
+      "premium_pct": 6.2,
+      "penetracion_pct": 99.3
+    },
+    {
+      "amenity": "Ascensor",
+      "premium_pct": 4.5,
+      "penetracion_pct": 60.9
+    },
+    {
+      "amenity": "Cocina",
+      "premium_pct": 0.9,
+      "penetracion_pct": 94.5
+    }
+  ],
+  "top_barrios": [
+    {
+      "barrio": "Palermo",
+      "precio_promedio": 135290,
+      "n": 8960
+    },
+    {
+      "barrio": "Recoleta",
+      "precio_promedio": 132963,
+      "n": 3717
+    },
+    {
+      "barrio": "San Nicolas",
+      "precio_promedio": 115760,
+      "n": 2172
+    },
+    {
+      "barrio": "Retiro",
+      "precio_promedio": 127240,
+      "n": 1362
+    },
+    {
+      "barrio": "Monserrat",
+      "precio_promedio": 100285,
+      "n": 1342
+    },
+    {
+      "barrio": "Belgrano",
+      "precio_promedio": 127219,
+      "n": 1300
+    },
+    {
+      "barrio": "Balvanera",
+      "precio_promedio": 98093,
+      "n": 1069
+    },
+    {
+      "barrio": "Almagro",
+      "precio_promedio": 94637,
+      "n": 989
+    }
+  ]
+}
