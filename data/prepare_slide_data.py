@@ -17,6 +17,15 @@ data["n_barrios"] = int(df["barrio"].nunique())
 data["n_filas_crudo"] = 29685
 data["n_cols_crudo"] = 90
 
+# --- tipos de variable (para el resumen de metadata) ---
+dtype_kind = df.dtypes.apply(lambda t: t.kind)
+n_bool = int((dtype_kind == "b").sum())
+n_numericas = int(dtype_kind.isin(["i", "f"]).sum())
+n_categoricas = int(dtype_kind.isin(["O"]).sum())
+data["n_vars_numericas"] = n_numericas
+data["n_vars_categoricas"] = n_categoricas
+data["n_vars_binarias"] = n_bool
+
 room_type_pct = (df["room_type"].value_counts(normalize=True) * 100).round(1)
 data["room_type_pct"] = room_type_pct.to_dict()
 

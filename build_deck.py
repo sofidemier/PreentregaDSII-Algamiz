@@ -177,6 +177,7 @@ add_text(s, 0.9, 4.35, 8.8, 0.9,
           "abiertos de OpenStreetMap", size=16, color=ICE)
 add_text(s, 0.9, 6.45, 9, 0.4, "Primera Entrega — Obtención de insights a partir de visualizaciones",
           size=13, color=RGBColor(0x9A, 0xA6, 0xDA), italic=True)
+add_text(s, 0.9, 6.8, 9, 0.4, "Sofia Algamiz", size=13, color=ICE, bold=True)
 
 # =========================================================================
 # Slide 2 — Abstract
@@ -225,13 +226,28 @@ tiles = [
     (f"{DATA['ocupacion_media_pct']}%", "ocupación estimada\npromedio (últimos 365 días)"),
     (str(DATA["n_amenities_media"]), "comodidades (amenities)\npromedio por propiedad"),
 ]
-gw, gh, gx, gy, gap = 3.85, 1.95, 0.7, 2.25, 0.25
+gw, gh, gx, gy, gap = 3.85, 1.7, 0.7, 2.1, 0.2
 for i, (n, l) in enumerate(tiles):
     cx = gx + (i % 3) * (gw + gap)
     cy = gy + (i // 3) * (gh + gap)
     add_shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy, gw, gh, CARD_BG, radius=0.05)
-    add_text(s, cx + 0.25, cy + 0.18, gw - 0.5, 0.85, n, size=34, color=NAVY, bold=True, font=FONT_HEAD)
-    add_text(s, cx + 0.25, cy + 1.05, gw - 0.5, 0.8, l, size=12.5, color=MUTED, line_spacing=1.15)
+    add_text(s, cx + 0.25, cy + 0.15, gw - 0.5, 0.75, n, size=30, color=NAVY, bold=True, font=FONT_HEAD)
+    add_text(s, cx + 0.25, cy + 0.88, gw - 0.5, 0.75, l, size=12, color=MUTED, line_spacing=1.1)
+
+# --- desglose de tipos de variable ---
+ty = gy + 2 * gh + gap + 0.15
+add_shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, 0.7, ty, 11.8, 0.85, NAVY, radius=0.08)
+add_text(s, 1.0, ty + 0.14, 2.3, 0.57, "TIPOS DE\nVARIABLE", size=11, color=GOLD, bold=True, line_spacing=1.05, anchor=MSO_ANCHOR.MIDDLE)
+tipos = [
+    (str(DATA["n_vars_numericas"]), "numéricas\n(precio, ocupación, reviews…)"),
+    (str(DATA["n_vars_categoricas"]), "categóricas\n(barrio, tipo de propiedad…)"),
+    (str(DATA["n_vars_binarias"]), "binarias\n(amenities: sí / no)"),
+]
+tw = 2.9
+for i, (n, l) in enumerate(tipos):
+    tx = 3.55 + i * (tw + 0.15)
+    add_text(s, tx, ty + 0.1, 0.75, 0.65, n, size=22, color=WHITE, bold=True, font=FONT_HEAD, anchor=MSO_ANCHOR.MIDDLE)
+    add_text(s, tx + 0.75, ty + 0.1, tw - 0.75, 0.65, l, size=10.5, color=ICE, line_spacing=1.1, anchor=MSO_ANCHOR.MIDDLE)
 footer(s, 3)
 
 # =========================================================================
@@ -449,6 +465,14 @@ for i, (n, t, d) in enumerate(steps):
     circle_badge(s, cx + 0.3, cy0 + 0.3, 0.55, n, bg=GOLD if is_mid else NAVY, fg=INK if is_mid else WHITE, size=18)
     add_text(s, cx + 1.05, cy0 + 0.3, cw - 1.35, 0.55, t, size=15, color=WHITE if is_mid else INK, bold=True, font=FONT_HEAD, anchor=MSO_ANCHOR.MIDDLE)
     add_text(s, cx + 0.3, cy0 + 1.05, cw - 0.6, 1.3, d, size=12.5, color=ICE if is_mid else MUTED, line_spacing=1.3)
+
+add_shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, cx0, cy0 + ch + 0.25, 11.8, 0.7, CARD_BG, radius=0.08)
+circle_badge(s, cx0 + 0.2, cy0 + ch + 0.38, 0.42, "✓", bg=NAVY, size=16)
+add_text(s, cx0 + 0.8, cy0 + ch + 0.25, 10.7, 0.7,
+          "Infraestructura de datos ya preparada: conexión validada con Google Analytics 4 "
+          "(vía BigQuery) para sumar datos de comportamiento web de la operación propia en "
+          "próximas iteraciones.",
+          size=12, color=INK, italic=True, anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.2)
 footer(s, 11)
 
 # =========================================================================

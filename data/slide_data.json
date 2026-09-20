@@ -4,6 +4,9 @@
   "n_barrios": 48,
   "n_filas_crudo": 29685,
   "n_cols_crudo": 90,
+  "n_vars_numericas": 19,
+  "n_vars_categoricas": 4,
+  "n_vars_binarias": 8,
   "room_type_pct": {
     "Entire home/apt": 90.6,
     "Private room": 8.6,
