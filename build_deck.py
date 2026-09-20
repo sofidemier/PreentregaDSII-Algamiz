@@ -104,7 +104,7 @@ def section_tag(slide, x, y, text, color=NAVY):
 
 def footer(slide, page_num, dark=False):
     fcolor = RGBColor(0x88, 0x91, 0xC4) if dark else MUTED
-    add_text(slide, 0.5, PAGE_H - 0.42, 8, 0.3, "Airbnb CABA — Data Science II · TP1", size=9, color=fcolor)
+    add_text(slide, 0.5, PAGE_H - 0.42, 8, 0.3, "Airbnb CABA · Data Science II · TP1", size=9, color=fcolor)
     add_text(slide, PAGE_W - 1.1, PAGE_H - 0.42, 0.6, 0.3, str(page_num), size=9, color=fcolor, align=PP_ALIGN.RIGHT)
 
 
@@ -175,7 +175,7 @@ add_text(s, 0.9, 1.6, 11.5, 2.6, "Optimización de Precios y Ocupación\nen Alqu
 add_text(s, 0.9, 4.35, 8.8, 0.9,
           "Un análisis de Airbnb en la Ciudad Autónoma de Buenos Aires, enriquecido con datos "
           "abiertos de OpenStreetMap", size=16, color=ICE)
-add_text(s, 0.9, 6.45, 9, 0.4, "Primera Entrega — Obtención de insights a partir de visualizaciones",
+add_text(s, 0.9, 6.45, 9, 0.4, "Primera Entrega: Obtención de insights a partir de visualizaciones",
           size=13, color=RGBColor(0x9A, 0xA6, 0xDA), italic=True)
 add_text(s, 0.9, 6.8, 9, 0.4, "Sofia Algamiz", size=13, color=ICE, bold=True)
 
@@ -316,9 +316,8 @@ add_text(s, 8.75, 1.6, 3.6, 0.6, "Cada punto es un barrio de CABA", size=13, col
 add_text(s, 8.75, 2.15, 3.6, 1.0, f"{DATA['corr_poi_precio']}", size=44, color=NAVY, bold=True, font=FONT_HEAD)
 add_text(s, 8.75, 3.15, 3.6, 0.9, "correlación entre densidad de POI y precio promedio por barrio", size=12.5, color=MUTED, line_spacing=1.25)
 add_text(s, 8.75, 4.2, 3.6, 2.5,
-          "Lectura ejecutiva: la caminabilidad hacia oferta gastronómica y transporte es un factor "
-          "de pricing a considerar junto con el tamaño y tipo de propiedad — no sustituye a otras "
-          "variables, pero suma valor de ubicación medible.",
+          "La caminabilidad hacia oferta gastronómica y transporte suma valor de ubicación "
+          "medible, junto con el tamaño y tipo de propiedad.",
           size=12.5, color=INK, line_spacing=1.3)
 footer(s, 5)
 
@@ -342,9 +341,8 @@ add_text(s, 8.75, 1.6, 3.6, 0.5, "Correlación puntaje ↔ precio", size=13, col
 add_text(s, 8.75, 2.1, 3.6, 1.0, f"{DATA['corr_reviews_precio']}", size=44, color=NAVY, bold=True, font=FONT_HEAD)
 add_text(s, 8.75, 3.1, 3.6, 0.6, "(0 = sin relación lineal, 1 = relación perfecta)", size=11.5, color=MUTED, italic=True)
 add_text(s, 8.75, 3.85, 3.6, 2.8,
-          "Lectura ejecutiva: la relación es más débil de lo que la intuición sugiere. Un buen "
-          "puntaje es casi una condición necesaria para sostenerse en el mercado, pero por sí solo "
-          "no explica tarifas más altas — no es una palanca de pricing fuerte.",
+          "La relación es más débil de lo que la intuición sugiere. Un buen puntaje sostiene al "
+          "host en el mercado, pero no explica tarifas más altas por sí solo.",
           size=12.5, color=INK, line_spacing=1.3)
 footer(s, 6)
 
@@ -441,49 +439,14 @@ for i, (t, d) in enumerate(recs):
 footer(s, 10)
 
 # =========================================================================
-# Slide 11 — Proximos pasos
-# =========================================================================
-s = add_slide(WHITE)
-section_tag(s, 0.7, 0.55, "Próximos pasos")
-add_text(s, 0.7, 0.9, 11.5, 0.6, "De insights descriptivos a modelos predictivos", size=27, color=INK, bold=True, font=FONT_HEAD)
-add_text(s, 0.7, 1.7, 11.5, 0.9,
-          "Este análisis es exploratorio y descriptivo (correlaciones), no causal. La segunda entrega "
-          "del TP incorporará modelos de Machine Learning entrenados y optimizados para predecir "
-          "precio y ocupación, cuantificando el efecto real de cada variable.",
-          size=15, color=INK, line_spacing=1.3)
-
-steps = [
-    ("1", "Modelo de pricing", "Regresión / gradient boosting para predecir precio óptimo por propiedad."),
-    ("2", "Modelo de ocupación", "Clasificación de riesgo de baja ocupación según ubicación y equipamiento."),
-    ("3", "Optimización", "Recomendador de amenities e inversión con mejor retorno esperado por barrio."),
-]
-cw, ch, cx0, cy0, gap = 3.85, 2.5, 0.7, 3.0, 0.25
-for i, (n, t, d) in enumerate(steps):
-    cx = cx0 + i * (cw + gap)
-    is_mid = i == 1
-    add_shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, cx, cy0, cw, ch, NAVY if is_mid else CARD_BG, radius=0.05)
-    circle_badge(s, cx + 0.3, cy0 + 0.3, 0.55, n, bg=GOLD if is_mid else NAVY, fg=INK if is_mid else WHITE, size=18)
-    add_text(s, cx + 1.05, cy0 + 0.3, cw - 1.35, 0.55, t, size=15, color=WHITE if is_mid else INK, bold=True, font=FONT_HEAD, anchor=MSO_ANCHOR.MIDDLE)
-    add_text(s, cx + 0.3, cy0 + 1.05, cw - 0.6, 1.3, d, size=12.5, color=ICE if is_mid else MUTED, line_spacing=1.3)
-
-add_shape(s, MSO_SHAPE.ROUNDED_RECTANGLE, cx0, cy0 + ch + 0.25, 11.8, 0.7, CARD_BG, radius=0.08)
-circle_badge(s, cx0 + 0.2, cy0 + ch + 0.38, 0.42, "✓", bg=NAVY, size=16)
-add_text(s, cx0 + 0.8, cy0 + ch + 0.25, 10.7, 0.7,
-          "Infraestructura de datos ya preparada: conexión validada con Google Analytics 4 "
-          "(vía BigQuery) para sumar datos de comportamiento web de la operación propia en "
-          "próximas iteraciones.",
-          size=12, color=INK, italic=True, anchor=MSO_ANCHOR.MIDDLE, line_spacing=1.2)
-footer(s, 11)
-
-# =========================================================================
-# Slide 12 — Cierre
+# Slide 11 — Cierre
 # =========================================================================
 s = add_slide(NAVY)
 add_shape(s, MSO_SHAPE.OVAL, 9.7, -2.3, 6, 6, NAVY_DARK)
 add_text(s, 0.9, 2.6, 10, 1.2, "Gracias", size=46, color=WHITE, bold=True, font=FONT_HEAD)
-add_text(s, 0.9, 3.75, 9.5, 0.5, "Optimización de Precios y Ocupación en Alquileres Temporarios — Airbnb CABA", size=15, color=ICE)
-add_text(s, 0.9, 4.35, 9.5, 0.4, "Fuentes: Inside Airbnb · OpenStreetMap / Overpass API", size=12.5, color=RGBColor(0x9A, 0xA6, 0xDA), italic=True)
-footer(s, 12, dark=True)
+add_text(s, 0.9, 3.75, 9.5, 0.5, "Optimización de Precios y Ocupación en Alquileres Temporarios · Airbnb CABA", size=15, color=ICE)
+add_text(s, 0.9, 4.35, 9.5, 0.4, "Fuentes: Inside Airbnb · OpenStreetMap (Overpass API) · Google Analytics 4 (BigQuery)", size=12.5, color=RGBColor(0x9A, 0xA6, 0xDA), italic=True)
+footer(s, 11, dark=True)
 
 prs.save("Presentacion_Ejecutiva_Airbnb_CABA.pptx")
 print("PPTX generado:", len(prs.slides.__iter__().__length_hint__() if False else list(prs.slides)), "slides" if False else "")
